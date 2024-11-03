@@ -1,20 +1,42 @@
-document.getElementById('btn-cash-out').addEventListener('click', function(event){
+document
+  .getElementById("btn-cash-out")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
-    const cashOut = document.getElementById('input-cash-out').value;
-    
-    const pinNumber = document.getElementById('input-cash-out-pin').value;
+    const cashOut = getInputFieldValueById('input-cash-out');
 
-    if(pinNumber === '1234'){
-        const balance = document.getElementById('account-balance').innerText;
+    const pinNumber = getInputFieldValueById('input-cash-out-pin')
 
-        const balanceNumber = parseFloat(balance);
-        const cashOutNumber = parseInt(cashOut);
 
-        const newBalance = balanceNumber - cashOutNumber;
-        document.getElementById('account-balance').innerText = newBalance;
+    if(isNaN(cashOut)){
+        alert('Failed to CashOut');
+        return
     }
-    else{
-        alert('Please Try Again');
+
+    if (pinNumber === 1234) {
+      const balance = getTextFieldValueById('account-balance');
+
+
+        if(balance < cashOut){
+            alert('You Do not have enough money to cashout');
+            return
+        }
+
+      const newBalance = balance - cashOut;
+
+      setElementById('account-balance', newBalance)
+
+        // Add To Transaction History
+        const div = document.createElement('div');
+        div.classList.add('bg-yellow-400');
+        div.innerHTML = `
+        <h4 class='text-2xl font-bold'>Cash Out</h4>
+        <p>${cashOut} TK withdraw. New Balance ${newBalance}</p>
+        ` 
+        document.getElementById('transaction-container').appendChild(div);
+
+
+    } else {
+      alert("Please Try Again");
     }
-})
+  });

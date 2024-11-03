@@ -6,36 +6,44 @@ get the pin
 Verify pin
 */
 
+document
+  .getElementById("btn-add-money")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
 
-document.getElementById('btn-add-money').addEventListener('click', function(event){
-    event.preventDefault()
 
-    /* const addMoneyInput = document.getElementById('input-add-money').value;
-    const addMoneyNumber = parseFloat(addMoneyInput); */
-    
-    const addMoney =  getInputFieldValueById('input-add-money');
+    const addMoney = getInputFieldValueById("input-add-money");
+    const pinNumber = getInputFieldValueById("input-pin-number");
 
 
-    // Get The Pin Number
-    const pinNumberInput = document.getElementById('input-pin-number').value;
-    
+    if(isNaN(addMoney)){
+        alert('Failed To Add Money');
+        return;
+    }
+
+
     // Verify Pin Number
-    if(pinNumberInput === '1234'){
+    if (pinNumber === 1234) {
+      const balance = getTextFieldValueById("account-balance");
 
-        // Step 4 Get the Current Balance
-        const balance = document.getElementById('account-balance').innerText;
+      const newBalance = addMoney + balance;
 
-        
-        // Step 5 Add addmoneyInput with main balance
-        const balanceNumber = parseFloat(balance)
-        const newBalance = addMoney + balanceNumber
-       
-        // Step 6 Update the balance in UI
-        document.getElementById('account-balance').innerText = newBalance
+    setElementById('account-balance', newBalance);
+    
+    // Add To Transaction History
+    const p = document.createElement('p');
+    p.innerText = `
+    Added : ${addMoney} Tk. New Balance: ${newBalance};
+    `
+    console.log(p)
+
+    // Should Be a common Function
+    document.getElementById('transaction-container').appendChild(p);
+
+
+    } else {
+      alert("Please Try Again");
     }
-    else{
-        alert('Please Try Again')
-    }
+  });
 
-});
