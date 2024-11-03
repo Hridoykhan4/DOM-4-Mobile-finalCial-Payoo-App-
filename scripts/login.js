@@ -6,10 +6,9 @@ document
     const phoneNumber = document.getElementById("phone-number").value;
     const pinNumber = document.getElementById("pin-number").value;
 
-    console.log(phoneNumber, pinNumber);
 
     // This is temporary
-    if (phoneNumber === "5" && pinNumber === "1234") {
+    if (phoneNumber === "01832148385" && pinNumber === "1234") {
       console.log("yOU are logged in");
       window.location.href = "/home.html";
     } else {

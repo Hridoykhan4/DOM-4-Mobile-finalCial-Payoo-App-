@@ -7,15 +7,19 @@ Verify pin
 */
 
 
+
 document.getElementById('btn-add-money').addEventListener('click', function(event){
     event.preventDefault()
 
-    const addMoneyInput = document.getElementById('input-add-money').value;
+    /* const addMoneyInput = document.getElementById('input-add-money').value;
+    const addMoneyNumber = parseFloat(addMoneyInput); */
     
+    const addMoney =  getInputFieldValueById('input-add-money');
+
 
     // Get The Pin Number
     const pinNumberInput = document.getElementById('input-pin-number').value;
- 
+    
     // Verify Pin Number
     if(pinNumberInput === '1234'){
 
@@ -24,9 +28,8 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
 
         
         // Step 5 Add addmoneyInput with main balance
-        const addMoneyNumber = parseFloat(addMoneyInput);
         const balanceNumber = parseFloat(balance)
-        const newBalance = addMoneyNumber + balanceNumber
+        const newBalance = addMoney + balanceNumber
        
         // Step 6 Update the balance in UI
         document.getElementById('account-balance').innerText = newBalance
