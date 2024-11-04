@@ -1,11 +1,3 @@
-/* 
-Add event handler
-prevent page load
-get money to be added to the balance
-get the pin
-Verify pin
-*/
-
 document
   .getElementById("btn-add-money")
   .addEventListener("click", function (event) {
@@ -31,17 +23,16 @@ document
 
     setElementById('account-balance', newBalance);
     
-    // Add To Transaction History
     const p = document.createElement('p');
     p.innerText = `
-    Added : ${addMoney} Tk. New Balance: ${newBalance};
+    Added: ${addMoney} TK. New Balance : ${newBalance}
     `
-    console.log(p)
-
-    // Should Be a common Function
     document.getElementById('transaction-container').appendChild(p);
 
-
+    document.getElementById('input-add-money').value = ''
+    document.getElementById('input-pin-number').value = ''
+    
+ 
     } else {
       alert("Please Try Again");
     }

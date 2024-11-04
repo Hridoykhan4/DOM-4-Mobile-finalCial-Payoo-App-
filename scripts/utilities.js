@@ -8,16 +8,14 @@ function getTextFieldValueById(id) {
   return parseFloat(textValue);
 }
 
-
-function setElementById(elementId, value){
-    document.getElementById(elementId).innerText = value
+function setElementById(elementId, value) {
+  document.getElementById(elementId).innerText = value;
 }
 
+function showASection(elementId) {
+  document.getElementById("add-money-form").classList.add("hidden");
+  document.getElementById("cash-out-form").classList.add("hidden");
+  document.getElementById("transaction-section").classList.add("hidden");
 
-function showASection(elementId){
-    document.getElementById('add-money-form').classList.add('hidden');
-    document.getElementById('cash-out-form').classList.add('hidden');
-    document.getElementById('transaction-section').classList.add('hidden');
-
-    document.getElementById(elementId).classList.remove('hidden');
+  document.getElementById(elementId).classList.remove("hidden");
 }
