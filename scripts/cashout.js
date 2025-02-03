@@ -35,9 +35,14 @@ document
 
       document.getElementById('input-cash-out-pin').value = '';
       document.getElementById('input-cash-out').value = '';
-
-
     } else {
       alert("Please Try Again");
     }
   });
+
+
+    document.getElementById('deleteAll').addEventListener('click', () => {
+      document.getElementById('transaction-container').innerHTML = `
+      <p class="text-2xl mt-4 ">History Cleared</p>
+      `
+    })

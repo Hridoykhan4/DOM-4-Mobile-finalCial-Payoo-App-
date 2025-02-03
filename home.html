@@ -12,39 +12,41 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+
   <body>
     <main class="flex justify-center items-center h-screen">
       <div class="mockup-phone">
         <div class="camera"></div>
         <div class="display">
-          <div class="artboard artboard-demo phone-1">
+          <div class="artboard artboard-demo phone-1 lg:phone-2">
             <!-- Available balance -->
-            <div class="stats ">
+            <div class="stats h-96 mt-5">
               <div class="stat bg-green-700 text-white">
                 <div class="stat-value text-5xl" id="account-balance">1000</div>
-                <div class="stat-desc text-white border-2 text-center">
+                <div class="stat-desc text-white text-center">
                   Available Balance
                 </div>
               </div>
             </div>
             <div class="divider"></div>
+
             <!-- User action buttons -->
             <div class="flex flex-wrap gap-3">
               <button
                 id="btn-show-add-money"
-                class="btn border-2 w-24  mx-auto  border-black bg-gray-800 bg-opacity-30 text-white font-bold"
+                class="btn active w-24 mx-auto border-black btn"
               >
                 Add Money
               </button>
               <button
                 id="btn-show-cash-out"
-                class="btn border-2 w-24  mx-auto  border-black bg-gray-800 bg-opacity-30 text-white font-bold"
+                class="btn active w-24 mx-auto border-black btn"
               >
                 Cash Out
               </button>
               <button
                 id="btn-show-transaction"
-                class="btn border-2 w-24  mx-auto  border-black bg-gray-800 bg-opacity-30 text-white font-bold"
+                class="btn active w-24 mx-auto border-black btn"
               >
                 Transactions
               </button>
@@ -132,7 +134,7 @@
             <!-- Cash Out End -->
             <!-- Transaction Start -->
             <div id="transaction-section" class="hidden border-2 text-center">
-              <h2 class="text-center text-3xl underline">
+              <h2 class="text-center text-3xl underline mb-3">
                 Transaction History
               </h2>
 
@@ -140,6 +142,10 @@
                 id="transaction-container"
                 class="text-center space-y-3 h-60 overflow-scroll"
               ></div>
+
+              <button id="deleteAll" class="btn btn-error text-white">
+                Delete❌
+              </button>
             </div>
             <!-- Transaction End -->
           </div>
