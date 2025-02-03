@@ -37,11 +37,9 @@ document
       */
 
 
-      p.innerText = `
-    Added: ${addMoney} TK. New Balance : ${newBalance}
-    `;
+      p.innerHTML = `<span class="font-bold text-xl">Added Money</span> <br> ${addMoney} TK. New Balance : ${newBalance}`;
       document.getElementById("transaction-container").appendChild(p);
-
+      p.className = 'p-3 bg-gray-300 text-center'
       document.getElementById("input-add-money").value = "";
       document.getElementById("input-pin-number").value = "";
     } else {
