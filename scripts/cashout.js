@@ -16,7 +16,7 @@ document
       const balance = getTextFieldValueById("account-balance");
 
       if (balance < cashOut) {
-        alert("You Do not have enough money to cashout");
+        alert("You Do not have enough money to cash-out");
         return;
       }
 
