@@ -1,13 +1,14 @@
-  document.getElementById('button-login').addEventListener('click', function(event){
-      event.preventDefault();
+document
+  .getElementById("button-login")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-      const phoneNumber = getInputFieldValueById('phone-number');
-      const pinNumber = getInputFieldValueById('pin-number');
+    const phoneNumber = getInputFieldValueById("phone-number");
+    const pinNumber = getInputFieldValueById("pin-number");
 
-      if(phoneNumber === 5 && pinNumber === 1234){
-        window.location.href = "../home.html"
-      }
-      else{
-        alert('Wrong Phone Number Or Pin')
-      }
-  })
+    if (phoneNumber === 5 && pinNumber === 1234) {
+      window.location.href = "./home.html";
+    } else {
+      alert("Wrong Phone Number Or Pin");
+    }
+  });
