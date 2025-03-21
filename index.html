@@ -13,25 +13,30 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
   </head>
   <body>
     <main class="flex justify-center items-center h-screen">
-
-      
       <div class="mockup-phone">
         <div class="camera"></div>
         <div class="display">
           <div class="artboard artboard-demo phone-1">
             <!-- Login Section -->
-            
+
             <div class="hero bg-base-200 min-h-screen">
-              <div class="flex items-center  flex-col">
-                <div class="border-t-2 border-blue-800 p-3  rounded-full">
-                             
-                  <img src="./payoo.png" class="w-20 pt-5" alt="">
+              <div class="flex items-center flex-col">
+                <div class="border-t-2 border-blue-800 p-3 rounded-full">
+                  <img src="./payoo.png" class="w-20 pt-5" alt="" />
                 </div>
                 <div
-                class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+                  class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
                 >
                   <form class="card-body">
                     <div class="form-control">
@@ -48,7 +53,9 @@
                     </div>
                     <div class="form-control">
                       <label class="label">
-                        <span class="label-text font-bold capitalize">4 digit pin</span>
+                        <span class="label-text font-bold capitalize"
+                          >4 digit pin</span
+                        >
                       </label>
                       <input
                         type="password"
@@ -58,10 +65,12 @@
                         class="input input-bordered"
                         required
                       />
-                   
                     </div>
                     <div class="form-control mt-6">
-                      <button id="button-login" class="btn btn-primary rounded-e-full rounded-s-full font-bold text-[17px]">
+                      <button
+                        id="button-login"
+                        class="btn btn-primary rounded-e-full rounded-s-full font-bold text-[17px]"
+                      >
                         Login
                       </button>
                     </div>

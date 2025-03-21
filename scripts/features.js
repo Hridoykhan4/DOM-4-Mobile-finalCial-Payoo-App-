@@ -11,6 +11,15 @@ document
     document.getElementById("btn-show-add-money").classList.add("text-white");
   });
 
+document.getElementById("btn-transfer-money").addEventListener("click", () => {
+  showASection("transfer-money-form");
+  removeAllBg();
+  document.getElementById("btn-transfer-money").classList.remove("btn-ghost");
+  document.getElementById("btn-transfer-money").classList.add("btn-primary");
+  document.getElementById("btn-transfer-money").classList.remove("text-black");
+  document.getElementById("btn-transfer-money").classList.add("text-white");
+});
+
 document
   .getElementById("btn-show-cash-out")
   .addEventListener("click", function () {

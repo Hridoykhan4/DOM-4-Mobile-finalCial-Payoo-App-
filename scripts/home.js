@@ -19,11 +19,16 @@ document
 
       setElementById("account-balance", newBalance);
 
+      Swal.fire({
+        title: `Cash in ${addMoney} TK into your account, new balance is ${newBalance}`,
+        icon: "success",
+        draggable: true
+      });
+
       const p = document.createElement("p");
 
-
-      p.className = 'bg-gray-700/20 font-medium text-xl px-3 text-center border-y-2 border'
-
+      p.className =
+        "bg-gray-700/20 font-medium text-xl px-3 text-center border-y-2 border";
 
       /* 
         const history = document.getElementById('transaction-container');
@@ -36,10 +41,9 @@ document
         history.appendChild(p)
       */
 
-
       p.innerHTML = `<span class="font-bold text-xl">Added Money</span> <br> ${addMoney} TK. New Balance : ${newBalance}`;
       document.getElementById("transaction-container").appendChild(p);
-      p.className = 'p-3 bg-gray-300 text-center'
+      p.className = "p-3 bg-gray-300 text-center";
       document.getElementById("input-add-money").value = "";
       document.getElementById("input-pin-number").value = "";
     } else {
